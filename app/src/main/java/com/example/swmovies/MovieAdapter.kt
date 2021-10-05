@@ -21,7 +21,7 @@ class MovieAdapter(
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val item = movieList[position]
        holder.movieName.text = item.title
-        Glide.with(context).load(item.poster).into(holder.movieImage)
+        Glide.with(context).load("https://image.tmdb.org/t/p/original/" + item.poster).into(holder.movieImage)
 
     }
 

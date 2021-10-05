@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getData(){
-       val call: Call<ResponseData> = MyRetrofit().movieApi().getMovieApi("ec81d5b61b6c0306b8544edf132e0690")
+       val call: Call<ResponseData> = MyRetrofit().movieApi().getMoviesApi("ec81d5b61b6c0306b8544edf132e0690")
         call.enqueue(object : Callback<ResponseData>{
             override fun onResponse(call: Call<ResponseData>, response: Response<ResponseData>) {
                 val adapter = MovieAdapter(this@MainActivity,response.body()?.results as List<Movies>)
